@@ -26,4 +26,4 @@ Using ```DEBUG_MODE = True``` in the configuration file allows the use of the GU
 * ```data_io.py```: record acquiered data to file
 
 
-TODO: implement a way to record the signals
+By defoult the data is writen in ```Output_Data.dat``` (see ```data_io.py```). One column per channel.
