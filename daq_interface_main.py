@@ -136,7 +136,6 @@ class MainWindow(QtGui.QMainWindow):
 
         self.read_thread.restart()
 
-    @pyqtSlot()
     def settings_param_change(self, parameter, changes):
         pass
 
@@ -145,4 +144,19 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     mainWin = MainWindow()
     mainWin.show()
-    sys.exit(app.exec_())
+    ap_ex = app.exec_()
+
+    # After aqcuisition, plot data
+    print("End acquisition")
+    import numpy as np
+    import matplotlib.pyplot as plt
+    data = np.loadtxt("Output_Data.dat")
+    fig, ax = plt.subplots(1, 1)
+    ax.plot(data)
+    ax.set_xlabel("Data points")
+    ax.set_ylabel("Voltage [V]")
+    ax.set_title("Measured signals")
+    plt.show()
+
+    sys.exit(ap_ex)
+    #sys.exit(app.exec_())
