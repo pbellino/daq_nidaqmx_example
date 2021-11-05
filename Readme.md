@@ -27,3 +27,5 @@ Using ```DEBUG_MODE = True``` in the configuration file allows the use of the GU
 
 
 By defoult the data is writen in ```Output_Data.dat``` (see ```data_io.py```). One column per channel.
+
+TODO: change in daq parameters not working (should be set in parameters.py)
