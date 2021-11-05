@@ -81,9 +81,15 @@ class SignalReader(QtCore.QThread):
             return
 
         try:
+            chan_args = {
+                          "min_val": -10,
+                          "max_val": 10,
+                          "terminal_config": nidaqmx.constants.TerminalConfiguration.RSE
+                         }
             for ch in self.input_channels:
                 channel_name = self.daq_in_name + "/ai" + str(ch)
-                self.task.ai_channels.add_ai_voltage_chan(channel_name)
+                self.task.ai_channels.add_ai_voltage_chan(channel_name,
+                                                          **chan_args)
                 print(channel_name)
         except Exception as e:
             print("DAQ is not connected, channel could not be added")
