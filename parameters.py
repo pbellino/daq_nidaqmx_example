@@ -67,7 +67,7 @@ class ConfigParamTree(ParamTreeBase):
                     {
                         "name": "Device Name",
                         "type": "str",
-                        "value": "Dev1",
+                        "value": "Dev2",
                     },
                     {
                         "name": "Sample Rate",
@@ -78,7 +78,7 @@ class ConfigParamTree(ParamTreeBase):
                     {
                         "name": "Sample Size",
                         "type": "int",
-                        "value": 1000,
+                        "value": 200,
                         "limits": (1, 10000),
                     },
                 ],
